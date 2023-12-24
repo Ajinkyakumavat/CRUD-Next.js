@@ -83,7 +83,7 @@ const AddModal = ({ open, setOpen,title,description,id,data,Action}) => {
                 }
                 <Box sx={{ flexDirection: "row" }}>
                     <Grid container sx={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
-                        <Grid item md={6}>
+                        <Grid item md={6} sx={{paddingTop:"0.8rem",paddingLeft:"2rem"}}>
                             <Button variant='contained' sx={{ width: "100%" }} onClick={handleClose}>Cancel</Button>
                         </Grid>
                         <Grid item md={6}>
