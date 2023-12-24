@@ -28,38 +28,38 @@
   max-height: calc(100% - 64px);
   max-width: 600px;
   width: calc(100% - 64px);
-  padding: 1rem;
+  padding: 1rem !important;
 }
 
 .text-center{
-  text-align: center;
-  color: rebeccapurple;
+  text-align: center !important;
+  color: rebeccapurple !important;
 }
 
 .MuiBox-root.css-0 {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex-direction: column !important;
 }
 
 .MuiBox-root.css-1l0z8uk {
-  width:100%;
+  width:100% !important;
   
 }
 
 .MuiGrid-root.MuiGrid-item.MuiGrid-grid-md-6.css-1k7sk4d-MuiGrid-root {
-  padding-top: 0.8rem;
-  padding-left: 2rem;
+  padding-top: 0.8rem !important;
+  padding-left: 2rem !important;
 }
 
 .error{
-  padding: 0;
-  margin: 7px;
-  text-align: left;
-  left: 0;
-  width: 90%;
-  color: red;
+  padding: 0 !important;
+  margin: 7px !important;
+  text-align: left !important;
+  left: 0 !important;
+  width: 90% !important;
+  color: red !important;
 }
 
 
