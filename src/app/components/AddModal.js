@@ -56,7 +56,7 @@ const AddModal = ({ open, setOpen,title,description,id,data,Action}) => {
     return (
         <Dialog open={open} onClose={handleClose} fullWidth maxWidth="sm">
             <Box sx={{padding:"1rem",display:"flex",alignItems:"center",justifyContent:"center",flexDirection:"column"}}>
-                <Typography className='text-center'>{obj.title === "" ? "ADD":"UPDATE"}</Typography>
+                <Typography className='text-center'>{Action === "Add" ? "ADD":"UPDATE"}</Typography>
                 <TextField
                     style={{ width: "90%" }}
                     id="outlined-basic"
@@ -87,7 +87,7 @@ const AddModal = ({ open, setOpen,title,description,id,data,Action}) => {
                             <Button variant='contained' sx={{ width: "100%" }} onClick={handleClose}>Cancel</Button>
                         </Grid>
                         <Grid item md={6} sx={{paddingTop:"0.8rem",paddingLeft:"2rem"}}>
-                            <Button variant='contained' sx={{ width: "90%" }} onClick={() => UpdateData()}>{obj.title === ""?"Add":"Update"}</Button>
+                            <Button variant='contained' sx={{ width: "90%" }} onClick={() => UpdateData()}>{Action === "Add"?"Add":"Update"}</Button>
                         </Grid>
                     </Grid>
                 </Box>
