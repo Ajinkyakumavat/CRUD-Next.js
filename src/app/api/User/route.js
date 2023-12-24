@@ -7,7 +7,6 @@ dbConnect()
 export const POST =async (req, res) => {
     const {id,title, description} =await req.json()
     const idCount = 0
-
     const newUser = new Users({
         id:idCount + 1,title,description
     })
