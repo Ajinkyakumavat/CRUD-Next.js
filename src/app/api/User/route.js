@@ -21,10 +21,10 @@ export const GET = async(req, res) => {
 }
 
 export const DELETE = async (req, res) => {
-    const { _id } = req.body
+    const { _id } = await req.json()
 
     try {
-        const response = await Users.findOneAndDelete(_id);
+        const response = await Users.findByIdAndDelete(_id);
         if (!response) {
             return NextResponse.json({ error: 'User not found' }, { status: 404 });
         }
