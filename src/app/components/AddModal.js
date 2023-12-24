@@ -55,7 +55,7 @@ const AddModal = ({ open, setOpen,title,description,id,data,Action}) => {
       };
     return (
         <Dialog open={open} onClose={handleClose} fullWidth maxWidth="sm">
-            <Box sx={{padding:"1rem",display:"flex",alignItems:"center",justifyContent:"center"}}>
+            <Box sx={{padding:"1rem",display:"flex",alignItems:"center",justifyContent:"center",flexDirection:"column"}}>
                 <Typography className='text-center'>{obj.title === "" ? "ADD":"UPDATE"}</Typography>
                 <TextField
                     style={{ width: "90%" }}
