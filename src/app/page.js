@@ -14,12 +14,13 @@ import AddModal from './components/AddModal';
 import Topbar from './components/Topbar';
 import { AuthContextProvider } from './components/AuthContext';
 import { toast } from 'react-toastify';
-
+import Backdrop from '@mui/material/Backdrop';
+import CircularProgress from '@mui/material/CircularProgress';
 
 export default function page() {
   const [open,setOpen] = React.useState(false)
 
-  const {data,setData,GetData,obj, setObj} = React.useContext(AuthContextProvider)
+  const {data,setData,GetData,obj, setObj,loader} = React.useContext(AuthContextProvider)
 
   const DeleteData = (id) => {
     axios.delete('/api/User', {
@@ -53,7 +54,16 @@ export default function page() {
   },[])
 
   return (
-    <TableContainer component={Paper} sx={{marginTop:"1rem"}}>
+    <>
+     {loader &&  <Backdrop
+        sx={{ color: '#fff', zIndex: (theme) => theme.zIndex.drawer + 1 }}
+        open={true}
+        // onClick={handleClose}
+      >
+        <CircularProgress color="inherit" />
+      </Backdrop>
+  }
+   <TableContainer component={Paper} sx={{marginTop:"1rem"}}>
       <Table sx={{ minWidth: 650 }} aria-label="simple table">
         <TableHead>
           <TableRow>
@@ -91,5 +101,6 @@ export default function page() {
       <AddModal Action="Update" setOpen={setOpen} open={open}  id={obj.id1} title={obj.title} description={obj.description}/>
 
     </TableContainer>
+    </>   
   );
 }

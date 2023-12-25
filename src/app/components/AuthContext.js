@@ -6,6 +6,7 @@ export const AuthContextProvider = createContext(null)
 
 const AuthContext = ({ children }) => {
     const [data,setData] = React.useState([])
+    const [loader,setLoader] = React.useState(false)
     const [obj, setObj] = useState({
         id:"",
         title: "",
@@ -13,12 +14,14 @@ const AuthContext = ({ children }) => {
     })
   
     const GetData = () => {
+      setLoader(true)
       axios.get("/api/User").then((res) =>{
+        setLoader(true)
         setData(res.data)
       })
     }
     return (
-        <AuthContextProvider.Provider value={{data,setData,GetData,obj, setObj}}>
+        <AuthContextProvider.Provider value={{data,setData,GetData,obj, setObj, loader}}>
             {children}
         </AuthContextProvider.Provider>
     )
