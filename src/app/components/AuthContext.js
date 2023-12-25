@@ -16,7 +16,7 @@ const AuthContext = ({ children }) => {
     const GetData = () => {
       setLoader(true)
       axios.get("/api/User").then((res) =>{
-        setLoader(true)
+        setLoader(false)
         setData(res.data)
       })
     }
